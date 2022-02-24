@@ -38,12 +38,20 @@
 
       <dt>Category</dt>
       <!-- Display category_id start -->
-      <dd><%= item.category_id %></dd>
+      <dd>
+        <% if @item.category.present? %>
+          <%= link_to item.category, item.category %>
+        <% end %>
+      </dd>
       <!-- Display category_id end -->
 
       <dt>Seller</dt>
       <!-- Display seller_id start -->
-      <dd><%= item.seller_id %></dd>
+      <dd>
+        <% if @item.seller.present? %>
+          <%= link_to item.seller, item.seller %>
+        <% end %>
+      </dd>
       <!-- Display seller_id end -->
 
       <dt>Is sold</dt>
