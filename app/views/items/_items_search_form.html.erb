@@ -7,21 +7,6 @@
   </div>
 
   <div class="form-group">
-    <%= f.label :is_sold_eq, "Is sold" %>
-    <div>
-      <label class="radio-inline">
-        <%= f.radio_button :is_sold_eq, "1", checked: ((params[:q] && params[:q][:is_sold_eq]) == "1" ? "checked" : "") %> Yes
-      </label>
-      <label class="radio-inline">
-        <%= f.radio_button :is_sold_eq, "0", checked: ((params[:q] && params[:q][:is_sold_eq]) == "0" ? "checked" : "")%> No
-      </label>
-      <label class="radio-inline">
-        <%= f.radio_button :is_sold_eq, ""%> Either
-      </label>
-    </div>
-  </div>
-
-  <div class="form-group">
     <%= f.label :description_cont, "Description contains" %>
     <%= f.text_field :description_cont, :class => "form-control", :placeholder => "Description contains" %>
   </div>
@@ -82,6 +67,11 @@
   <div class="form-group">
     <%= f.label :seller_email_cont, "Seller email contains" %>
     <%= f.text_field :seller_email_cont, :class => "form-control", :placeholder => "Seller email contains" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :buyer_email_cont, "Buyer email contains" %>
+    <%= f.text_field :buyer_email_cont, :class => "form-control", :placeholder => "Buyer email contains" %>
   </div>
 
   <div class="form-group">
