@@ -6,7 +6,7 @@ class ItemsController < ApplicationController
 
   def index
     @q = Item.ransack(params[:q])
-    @items = @q.result(distinct: true).includes(:seller, :messages,
+    @items = @q.result(distinct: true).includes(:seller, :buyer, :messages,
                                                 :category).page(params[:page]).per(10)
     @location_hash = Gmaps4rails.build_markers(@items.where.not(location_latitude: nil)) do |item, marker|
       marker.lat item.location_latitude
@@ -73,6 +73,6 @@ class ItemsController < ApplicationController
 
   def item_params
     params.require(:item).permit(:title, :price, :description, :location,
-                                 :image, :category_id, :seller_id, :is_sold)
+                                 :image, :category_id, :seller_id, :buyer_id)
   end
 end

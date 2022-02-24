@@ -8,7 +8,7 @@ class CreateItems < ActiveRecord::Migration[6.0]
       t.string :image
       t.integer :category_id
       t.integer :seller_id
-      t.boolean :is_sold
+      t.integer :buyer_id
 
       t.timestamps
     end

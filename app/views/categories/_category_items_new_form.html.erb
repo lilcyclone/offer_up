@@ -34,9 +34,10 @@
 
   <%= f.hidden_field :seller_id, value: current_user.id %>
 
-  <div class="form-check">
-    <%= f.check_box :is_sold, class: "form-check-input" %>
-    <%= f.label :is_sold, class: "form-check-label" %>
+  <div class="form-group">
+    <%= f.label :buyer_id %>
+
+    <%= f.collection_select :buyer_id, User.all, :id, :to_s, {}, class: "form-control" %>
   </div>
 
   <%= f.submit "Create item", class: "btn btn-block btn-outline-secondary" %>

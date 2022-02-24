@@ -9,13 +9,16 @@ class ItemResource < ApplicationResource
   attribute :image, :string
   attribute :category_id, :integer
   attribute :seller_id, :integer
-  attribute :is_sold, :boolean
+  attribute :buyer_id, :integer
 
   # Direct associations
 
   belongs_to :category
 
   has_many   :messages
+
+  belongs_to :buyer,
+             resource: UserResource
 
   belongs_to :seller,
              resource: UserResource

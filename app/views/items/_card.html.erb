@@ -40,8 +40,12 @@
         <% end %>
       </dd>
 
-      <dt>Is sold</dt>
-      <dd><%= item.is_sold %></dd>
+      <dt>Buyer</dt>
+      <dd>
+        <% if @item.buyer.present? %>
+          <%= link_to item.buyer, item.buyer %>
+        <% end %>
+      </dd>
 
     </dl>
 

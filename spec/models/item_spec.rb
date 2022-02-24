@@ -6,6 +6,8 @@ RSpec.describe Item, type: :model do
 
     it { should have_many(:messages) }
 
+    it { should belong_to(:buyer) }
+
     it { should belong_to(:seller) }
   end
 
