@@ -5,7 +5,8 @@ class MessagesController < ApplicationController
 
   # GET /messages
   def index
-    @messages = current_user.sent_messages.page(params[:page]).per(10)
+    @q = current_user.sent_messages.ransack(params[:q])
+    @messages = @q.result(:distinct => true).includes(:sender, :recipient, :item).page(params[:page]).per(10)
   end
 
   # GET /messages/1
